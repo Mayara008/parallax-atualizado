@@ -1,0 +1,91 @@
+
+/* Definindo uma configuração GERAL para o corpo da pagina*/
+body, html{ 
+    height: 100%; /* Para definir a altura da area do conteúdo, não inclui margem ne padding. Se não define a alura do elemento PAI , ele não vai ter nenhuma referencia pra calcular porcentagem. 
+    - PORCENTAGEM : pega 100% da tela disponivel.  e precisa ter uma referencia, 100% e, relação a quem ? 
+    - vh - altuta do viw port . não precisa  (Ele pega da tela, da parte da tela branca do navegador.) 
+    */
+    margin: 0; /* Define a margem externa do conteúdo  */
+    font-size: 16px; /* Indica o tamano da letra(fonte) */
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif; /* define a familia de fontes que será usada no texto.Quando uma falhar a outra irá funcionar. */
+    font-weight: 400; /* Define quão negrito o text tem que ficar (100-900 - de 100 em 100) */
+    line-height: 1.8em; /* Define o espaçamento entre as linhas de um text */
+    color: #666; /* Cor da fonte */
+    
+}
+
+/* DEfinindo padrão geral de TODAS as imagens */
+.pimg1, .pimg2, .pimg3{
+    position: relative; /* DEfine o posicionamento dos elementos na página. (Relative) A partir do fluxo natural da pagina. */
+    background-image: linear-gradient(to top, #a18cd1 0%, #fbc2eb 100%); /* Cor de fundo do espaço  */
+    opacity: 0.70;  /*  */
+    background-position: center; /*  */
+    background-size: cover;/* Toma todo o espaço do local de onde a imagem está */
+    background-repeat: no-repeat; /* DEfine se a iamgem deve ser repetida (no-repeat) -Não repita */
+    background-attachment: fixed; /* DEfine se a imagem de fundo rola ou não a tela */
+    /* fixed = Parallax
+        scroll = normal */
+}
+
+
+/* Definindo padrão de forma individual de cada imagem */
+.pimg1{
+    background-image: url('../img/4.png'); /* Seleciona uma imagem de fundo */
+    min-height: 100%; /* Define a altura minima de um elemento */
+}
+
+.pimg2{ 
+    background-image: url('../img/2.png'); 
+    min-height: 400px;   /* Possibilita p espaçamento sem ter nenhuma informação, O espaçamento que vai mostrar o parallax, por exemplo.*/
+}
+
+.pimg3{ 
+    background-image: url('../img/3.png');
+    min-height: 400px; 
+}
+
+/* SECTION */
+/* Definindo o corpo onde as section ficarão.  */
+.section{ /* Define uma seção no documento */
+    text-align: center ; /* Alinhando o texto de forma central da pagina */
+    padding: 50px 80px;/* Espaçamento interno "50px" Topo e Final | Espaçamento interno Lateral "80px" esquerda e direita */
+}
+
+.section-light{ 
+    background-color: #f4f4f4; 
+    color: #666;
+}
+
+.section-dark{ 
+    background-color: #282e34; 
+    color: #ddd; 
+}
+
+/* TEXT */
+.ptext{ /* Formatando os texto da pagina */
+    position: absolute; /* Define uma posição para o conteudo  */
+    top: 50%; 
+    width: 100%; 
+    text-align: center;
+    color: #000; 
+    font-size: 27px; /* Define o tamanho da fonte */
+    letter-spacing: 8px; /* Define o espáçamento entre cada letra da palavra ou texto */ 
+    text-transform: uppercase; /* Deixou com letra maiuscula */ /*  */
+}
+
+.ptext .border {
+    background-color: #111; /* Definiu a cor de fundo do text da classe border */
+    color: #FFF; /* Definiu o fundo do texto que está dentro da borda */
+    padding: 20px; /* Espaçamento interno do texto da border */
+}
+
+.ptext .border.trans{ /*  */
+    background-color: transparent; /* Deixou esse backgrouns transparente */
+}
+
+/* Entender melhor como funciona essa parte */
+@media(max-width:568px){ /*  */
+    .pimg1, .pimg2, .pimg3{ /*  */
+        background-attachment: scroll; /*  */
+    }
+}
